@@ -5,7 +5,7 @@ Codeigniter Project for creating downloadable-permanent direct links for hosted 
 
 Installation:
 
- 1. Create Empty Code Igniter Project, Replace **application** folder with **mine**.
+ 1. Create Empty Code Igniter Project, Replace **application** folder with **mine** and create empty folder named "files", lastly put tailwinds.min.css file to root.
  2. Import gdrive.sql file into database
  3. Edit application/config/db.php with your db credentials.
  4. Create Google Project and Enable Google Drive API
