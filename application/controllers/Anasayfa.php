@@ -50,6 +50,10 @@ class Anasayfa extends CI_Controller
     {
         $this->load->view('gfile', array("icerik" => gdFile($id)));
 
+    }  public function linkler()
+    {
+        $this->load->view('linkler');
+
     }
 
     public function onbellek()

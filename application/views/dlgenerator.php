@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php $this->load->view("css") ?>
-    <title>Ana Sayfa Hoşgeldin <?php sezonuseri(); ?></title>
+    <title>  <?=$dosya->isim?> İndiriliyor..</title>
 </head>
 <body>
 <?php $this->load->view("nav") ?><!-- component -->
@@ -26,6 +26,9 @@
             <div id="progressbar" style="width:0%"
                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition duration-500 ease-in-out"></div>
         </div>
+        <span id="generated" class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 ">
+
+      </span>
     </div>
 
 </div>
@@ -49,7 +52,9 @@
             }
             if (xhr.readyState == XMLHttpRequest.DONE) {
                 document.getElementById("progressbar").style.width = "100%";
-                document.getElementById("progresstext").innerText = "100%";
+                document.getElementById("progressbar").style.width = "100%";
+
+                document.getElementById("generated").innerHTML = "<a href='<?php echo base_url() ?>files/<?=$dosya->isim?>'> DOWNLOAD </a>";
 
             }
         }

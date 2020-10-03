@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php $this->load->view("css") ?>
-    <title>Drive'na Hoşgeldin <?php sezonuseri(); ?></title>
+    <title><?=$icerik->isim ?> </title>
 </head>
 <body>
 <?php $this->load->view("nav") ?><!-- component -->

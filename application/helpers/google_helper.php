@@ -31,6 +31,8 @@ function tokenvarmi()
 
 function dosyaindir($id, $chunk = 1024)
 {
+    $ci =& get_instance();
+
     if (ob_get_level() == 0) ob_start();
 
     require APPPATH . 'libraries/google-php-client/vendor/autoload.php';
@@ -57,13 +59,21 @@ function dosyaindir($id, $chunk = 1024)
         ob_flush();
         flush();
     }
+    $kaydet=array("directlink"=>$dosyayolu,"fileId"=>$id,"kullaniciId"=>ben()->id,"dosyaAdi"=>$dosyabilgi->isim);
+    $varmi=$ci->db->where("fileId",$id)->get("linkler")->num_rows();
+    if($varmi<1){
+        $ci->db->insert("linkler",$kaydet);
+
+    }
     fclose($outHandle);
 
     ob_end_flush();
-    $kaydet=array("directlink"=>$dosyayolu,"fileId"=>$id,"kullaniciId"=>ben()->id,"dosyaAdi"=>$dosyabilgi->isim);
-    $this->db->insert("linkler",$kaydet);
-}
 
+}
+function linkler(){
+    $ci =& get_instance();
+    return $ci->db->where("kullaniciId",ben()->id)->get("linkler")->result();
+}
 function dosyalistele()
 {
     require APPPATH . 'libraries/google-php-client/vendor/autoload.php';
