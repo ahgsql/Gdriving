@@ -20,8 +20,8 @@ Usage
  3. You will be able to see all of your folders and files, you can navigate between them, and click any file to open download screen.
 
 TO-DOs:
-
- - [ ] Save generated links to db and show to user.
- - [ ] Create cache for faster loading speeds.
- - [ ] Register Screen
+✅ English Translation
+✅ Save generated links to db and show to user.
+⬜️ Create cache for faster loading speeds.
+⬜️ Register Screen
 
