@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php $this->load->view("css") ?>
-    <title>Ana Sayfa Hoşgeldin <?php sezonuseri(); ?></title>
+    <title>Welcome <?php sezonuseri(); ?></title>
 </head>
 <body>
 <?php $this->load->view("nav") ?><!-- component -->
@@ -15,7 +15,7 @@
             <span class="inline-flex px-2"><?php if (tokenvarmi()) {
                     echo json_decode(ben()->token)->access_token;
                 } else {
-                    echo "TOKEN YOK";
+                    echo "No Token";
                 } ?></span>
         </div>
     </div>
@@ -29,22 +29,22 @@
 
         <div class=" transition-all duration-500 ease-in-out rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-indigo-500 text-white"
             >
-            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Yetkiniz Var,</h3>
+            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Authorized,</h3>
             <p class="relative z-10">
                 <a href="<?php echo base_url(); ?>anasayfa/gdRoot"
-                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Drive'ma Git</a>
+                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Go to My Drive</a>
             </p>
         </div>
     </div>
 
     <div class="transition-all duration-500 ease-in-out w-3/12 bg-white-900 items-center justify-center px-5 py-5">
         <div class=" transition-all duration-500 ease-in-out rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-orange-400 text-white">
-            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Önbellek Ayarları</h3>
-            <h3 class="  text-indigo-100 leading-tight mb-5 relative z-10"> Önbelleğe alarak sistemi daha hızlı kullanabilirsiniz..</h3>
+            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Caching Settings</h3>
+            <h3 class="  text-indigo-100 leading-tight mb-5 relative z-10"> By caching, faster page loads is possible.</h3>
             <p class="relative z-10">
                 <a href="<?php echo base_url(); ?>anasayfa/onbellek"
                    class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-blue-500 hover:bg-blue-800 focus:outline-none transition-all duration-500 ease-in-out">
-                    <?=(onbellekAcik()?"Önbelleklemeyi Kapat":"Önbelleklemeyi Aç") ?>
+                    <?=(onbellekAcik()?"Open Caching":"Close Caching") ?>
                 </a>
             </p>
         </div>
@@ -57,12 +57,11 @@
 
         <div class=" transition-all duration-500 ease-in-out w-full rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-indigo-500 text-white"
              >
-            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Access Token
-                Bulunamadı, almak için tıklayın:</h3>
+            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">No Access Token, Click For Generate:</h3>
             <p class="relative z-10">
                 <a href="<?php echo base_url(); ?>auth/tokenal"
-                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Token
-                    Al</a>
+                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Get Token
+                    </a>
             </p>
         </div>
     </div>

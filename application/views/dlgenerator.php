@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php $this->load->view("css") ?>
-    <title>  <?=$dosya->isim?> İndiriliyor..</title>
+    <title>  <?=$dosya->isim?> Downloading..</title>
 </head>
 <body>
 <?php $this->load->view("nav") ?><!-- component -->
@@ -13,7 +13,7 @@
         <div class="flex mb-2 items-center justify-between">
             <div>
       <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200">
-       İndirme Devam Ediyor...
+       Downloading..
       </span>
             </div>
             <div class="text-right">

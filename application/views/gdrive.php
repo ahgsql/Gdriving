@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php $this->load->view("css") ?>
-    <title>Drive'na Hoşgeldin <?php sezonuseri(); ?></title>
+    <title>Welcome to Your Drive <?php sezonuseri(); ?></title>
 </head>
 <body>
 <?php $this->load->view("nav") ?><!-- component -->
@@ -14,7 +14,7 @@
             <span class="inline-flex px-2"><?php if (tokenvarmi()) {
                     echo json_decode(ben()->token)->access_token;
                 } else {
-                    echo "TOKEN YOK";
+                    echo "No Token";
                 } ?></span>
         </div>
     </div>
@@ -24,8 +24,7 @@
     <div class="transition-all duration-500 ease-in-out w-4/5 bg-white-900 flex items-center justify-center px-5 py-5">
 
         <div class=" transition-all duration-500 ease-in-out w-full rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-indigo-500 text-white">
-            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Google Drive İçeriğiniz</h3>
-            <h3 class="text-2xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Klasörler</h3>
+            <h3 class="text-2xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Folders</h3>
             <div class="px-10 grid grid-cols-4 gap-4 m-10">
             <?php foreach($icerik['klasorler'] as $eleman):  ?>
               <div class="px-1 py-1 grid grid-cols-4 gap-4">
@@ -48,7 +47,7 @@
               </div>
             <?php endforeach; ?>
             </div>
-            <h3 class="text-2xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Dosyalar</h3>
+            <h3 class="text-2xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Files</h3>
             <div class="px-10 grid grid-cols-3 gap-4 m-10">
                 <?php foreach($icerik['dosyalar'] as $eleman):  ?>
                     <div class="px-1 py-1 grid grid-cols-4 gap-4">

@@ -14,7 +14,7 @@
             <span class="inline-flex px-2"><?php if (tokenvarmi()) {
                     echo json_decode(ben()->token)->access_token;
                 } else {
-                    echo "TOKEN YOK";
+                    echo "No Token";
                 } ?></span>
         </div>
     </div>
@@ -24,12 +24,12 @@
     <div class="transition-all duration-500 ease-in-out w-4/5 bg-white-900 flex items-center justify-center px-5 py-5">
         <div class=" transition-all duration-500 ease-in-out w-full rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-indigo-500 text-white">
             <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10"> <?=$icerik->isim ?></h3>
-            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Tür: <?=$icerik->tur ?></h3>
-            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Dosya Boyutu: <?=boyutDon($icerik->boyut) ?></h3>
-            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">İndirme Linki:
+            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Type: <?=$icerik->tur ?></h3>
+            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Size: <?=boyutDon($icerik->boyut) ?></h3>
+            <h3 class="text-xl font-semibold text-indigo-100 leading-tight mb-3 relative z-10">Web Url:
                 <a class="underline"  href="<?=$icerik->indirmelinki ?>"><?=$icerik->indirmelinki ?></a></h3><br>
             <a href="<?=base_url()?>anasayfa/dlgenerator/<?=$icerik->id ?>" class="bg-red-500 text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 hover:border-t-2 border-red-900 hover:border-red-600 rounded">
-                Direkt Link Oluştur
+              Download to Server
             </a>
         </div>
     </div>
@@ -39,12 +39,10 @@
 
         <div class=" transition-all duration-500 ease-in-out w-full rounded-lg shadow-xl overflow-hidden relative px-8 pt-16 pb-32 bg-indigo-500 text-white"
              style="max-width:400px;">
-            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">Access Token
-                Bulunamadı, almak için tıklayın:</h3>
+            <h3 class="text-3xl font-semibold text-indigo-100 leading-tight mb-10 relative z-10">No Access Token, Click For Generate</h3>
             <p class="relative z-10">
                 <a href="<?php echo base_url(); ?>auth/tokenal"
-                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Token
-                    Al</a>
+                   class="py-3 px-6 rounded shadow hover:shadow-lg text-white text-lg bg-gray-900 hover:bg-black focus:outline-none transition-all duration-500 ease-in-out">Get Token</a>
             </p>
         </div>
     </div>
